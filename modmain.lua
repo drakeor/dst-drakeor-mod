@@ -43,7 +43,7 @@ local STRINGS = GLOBAL.STRINGS
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.drakeor = "The 'Innocent' One"
 STRINGS.CHARACTER_NAMES.drakeor = "Drakeor"
-STRINGS.CHARACTER_DESCRIPTIONS.drakeor = "*Perk 1\n*Perk 2\n*Perk 3"
+STRINGS.CHARACTER_DESCRIPTIONS.drakeor = "*Carries a flaming pick/axe\n*Likes fire\n*Sheds every few days"
 STRINGS.CHARACTER_QUOTES.drakeor = "\"Quote\""
 STRINGS.CHARACTER_SURVIVABILITY.drakeor = "Slim"
 
