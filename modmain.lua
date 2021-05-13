@@ -1,6 +1,7 @@
 PrefabFiles = {
 	"drakeor",
 	"drakeor_none",
+    "drakeaxe"
 }
 
 Assets = {
@@ -35,16 +36,48 @@ Assets = {
     Asset( "ATLAS", "images/names_gold_drakeor.xml" ),
 }
 
-AddMinimapAtlas("images/map_icons/drakeor.xml")
+-- Caprica has the stormdragon property
+AddPrefabPostInit("caprica", function(inst)
+    inst:AddTag("dragon")
+end)
 
+-- TUNING
+
+TUNING = GLOBAL.TUNING
+
+TUNING.DRAKEAXE =
+{
+    TOOL_DURABILITY= 250,
+    AXE_EFFECTIVENESS = 1.5,
+    PICKAXE_EFFECTIVENESS = 1.5,
+    AXE_CONSUMPTION = 1,
+    PICKAXE_CONSUMPTION = 3,
+    DAMAGE = 26,
+    ATTACKWEAR = 1,
+    SHADOW_WEAR = 1,
+}
+
+
+-- Weapon Lines
 local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
+
+local NAMES = GLOBAL.STRINGS.NAMES
+local RECIPE_DESC = GLOBAL.STRINGS.RECIPE_DESC
+local DESC = GLOBAL.STRINGS.CHARACTERS
+
+NAMES.DRAKEAXE = "Drake Axe"
+RECIPE_DESC.DRAKEAXE = "Hard enough to shatter stones"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.DRAKEAXE = "An axe hard enough to shatter stones"
+
+AddMinimapAtlas("images/map_icons/drakeor.xml")
+
 
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.drakeor = "The 'Innocent' One"
 STRINGS.CHARACTER_NAMES.drakeor = "Drakeor"
-STRINGS.CHARACTER_DESCRIPTIONS.drakeor = "*Carries a flaming pick/axe\n*Likes fire\n*Sheds every few days"
-STRINGS.CHARACTER_QUOTES.drakeor = "\"Quote\""
+STRINGS.CHARACTER_DESCRIPTIONS.drakeor = "*Carries a handy pick/axe\n*Likes fire\n*Sheds every few days"
+STRINGS.CHARACTER_QUOTES.drakeor = "\"Yay! Fire!\""
 STRINGS.CHARACTER_SURVIVABILITY.drakeor = "Slim"
 
 -- Custom speech strings
