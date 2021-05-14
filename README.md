@@ -1,5 +1,7 @@
 # Drakeor Mod
 
+![image](https://github.com/drakeor/dst-drakeor-mod/raw/main/bigportraits/drakeor.png)
+
 ## Drakeor
 
 - More resource oriented
