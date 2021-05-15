@@ -1,6 +1,15 @@
 -- This information tells other players more about the mod
-name = "Drakeor"
-description = "The 'Innocent' One."
+name = "Drakeor the Dragon"
+description = [[
+    Adds the Drakeor character to Don't Starve Together
+
+    - Starts with the Drake Axe, an axe and pickaxe
+    - Slowly regains sanity around fires
+    - Completely fireproof
+    - Takes 75% less overheat damage
+    
+    View more at https://drakeor.com/
+]]
 author = "Caprica and Drakeor"
 version = "1.0.0" -- This is the version of the template. Change it to your own number.
 
