@@ -17,6 +17,7 @@ TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.DRAKEOR = {
 	"flint",
 	"twigs",
 	"twigs",
+	"drakeaxe"
 }
 
 local start_inv = {}
