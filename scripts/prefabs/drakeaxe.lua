@@ -42,6 +42,7 @@ local function fn(colour)
     local inst = CreateEntity()
     local trans = inst.entity:AddTransform()
     local anim = inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
     MakeInventoryPhysics(inst)
     
     anim:SetBank("drakeaxe")
@@ -50,6 +51,10 @@ local function fn(colour)
 
     inst:AddTag("weapon")
     inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
 
     -- Can be used (ineffectively) as a weapon
     inst:AddComponent("weapon")

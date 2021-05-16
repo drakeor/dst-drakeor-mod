@@ -18,12 +18,19 @@ local function fn(colour)
     local inst = CreateEntity()
     local trans = inst.entity:AddTransform()
     local anim = inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
     MakeInventoryPhysics(inst)
     
     anim:SetBank("dragonfur")
     anim:SetBuild("dragonfur")
     anim:PlayAnimation("idle")
 
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+    
     inst:AddComponent("inspectable")
 
     inst:AddComponent("inventoryitem")
