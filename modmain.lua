@@ -1,7 +1,8 @@
 PrefabFiles = {
 	"drakeor",
 	"drakeor_none",
-    "drakeaxe"
+    "drakeaxe",
+    "dragonfur"
 }
 
 Assets = {
@@ -36,8 +37,8 @@ Assets = {
     Asset( "ATLAS", "images/names_gold_drakeor.xml" ),
 }
 
--- Caprica has the stormdragon property
-AddPrefabPostInit("caprica", function(inst)
+-- Drakeor has the dragon property
+AddPrefabPostInit("drakeor", function(inst)
     inst:AddTag("dragon")
 end)
 
@@ -70,6 +71,10 @@ NAMES.DRAKEAXE = "Drake Axe"
 RECIPE_DESC.DRAKEAXE = "Hard enough to shatter stones"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.DRAKEAXE = "An axe hard enough to shatter stones"
 
+NAMES.DRAGONFUR = "Dragon Fur"
+RECIPE_DESC.DRAGONFUR = "Oddly durable and fireproof"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.DRAGONFUR = "Oddly durable and fireproof"
+
 AddMinimapAtlas("images/map_icons/drakeor.xml")
 
 
@@ -78,7 +83,7 @@ STRINGS.CHARACTER_TITLES.drakeor = "The 'Innocent' One"
 STRINGS.CHARACTER_NAMES.drakeor = "Drakeor"
 STRINGS.CHARACTER_DESCRIPTIONS.drakeor = "*Carries a handy pick/axe\n*Likes fire\n*Sheds every few days"
 STRINGS.CHARACTER_QUOTES.drakeor = "\"Yay! Fire!\""
-STRINGS.CHARACTER_SURVIVABILITY.drakeor = "Slim"
+STRINGS.CHARACTER_SURVIVABILITY.drakeor = "Adequate"
 
 -- Custom speech strings
 STRINGS.CHARACTERS.DRAKEOR = require "speech_drakeor"
@@ -98,6 +103,16 @@ local skin_modes = {
         offset = { 0, -25 } 
     },
 }
+
+-- Add recipes
+local RECIPETABS = GLOBAL.RECIPETABS
+local TECH = GLOBAL.TECH
+-- Create a recipe. The atlas for a recipe must be specified after it is
+-- created as below.  Note that custom ingredients can be specified as above,
+-- or right in the Recipe call.
+local myprefabRecipe = Recipe("drakeaxe", { Ingredient("dragonfur", 1, "images/inventoryimages/dragonfur.xml"), Ingredient("twigs", 2) }, RECIPETABS.TOOLS, TECH.NONE )
+myprefabRecipe.atlas = "images/inventoryimages/drakeaxe.xml"
+
 
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
 AddModCharacter("drakeor", "MALE", skin_modes)

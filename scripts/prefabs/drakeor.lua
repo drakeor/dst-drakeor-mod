@@ -2,6 +2,7 @@ local MakePlayerCharacter = require "prefabs/player_common"
 
 local assets = {
     Asset("SCRIPT", "scripts/prefabs/player_common.lua"),
+	Asset("ANIM", "anim/drakeor_beard.zip"),
 }
 
 -- Your character's stats
@@ -68,6 +69,7 @@ local function sanityfn(inst)--, dt)
     return delta
 end
 
+-- TheWorld:PushEvent("ms_nextcycle")
 
 -- This initializes for both the server and client. Tags can be added here.
 local common_postinit = function(inst) 
@@ -75,9 +77,30 @@ local common_postinit = function(inst)
 	-- Just like willow, am more heat resistent 
 	inst:AddTag("heatresistant")  
 
+	 --bearded (from beard component) added to pristine state for optimization
+	 inst:AddTag("bearded")
+
 	-- Minimap icon
 	inst.MiniMapEntity:SetIcon( "drakeor.tex" )
 end
+
+-------- START BEARD STUFF
+
+local function OnResetBeard(inst)
+    inst.AnimState:ClearOverrideSymbol("beard")
+end
+
+--tune the beard economy...
+local BEARD_DAYS = 4
+local BEARD_BITS = 2
+
+local function OnGrowFur(inst, skinname)
+	inst.AnimState:OverrideSymbol("beard", "drakeor_beard", "beard_medium")
+    inst.components.beard.bits = BEARD_BITS
+end
+
+
+------- END BEARD STUFF
 
 -- This initializes for the server only. Components are added here.
 local master_postinit = function(inst)
@@ -87,6 +110,19 @@ local master_postinit = function(inst)
 	-- choose which sounds this character will play
 	inst.soundsname = "wilson"
 	
+	----- START BEARD STUFF
+	
+    inst:AddComponent("beard")
+    inst.components.beard.onreset = OnResetBeard
+    inst.components.beard.prize = "dragonfur"
+    inst.components.beard.is_skinnable = true
+    inst.components.beard:AddCallback(BEARD_DAYS, OnGrowFur)
+
+	-- Very minimal insulation, so it's not OP
+	inst.components.beard.insulation_factor = 0.1
+
+	------ END BEARD STUFF
+
 	-- Uncomment if "wathgrithr"(Wigfrid) or "webber" voice is used
     --inst.talker_path_override = "dontstarve_DLC001/characters/"
 	

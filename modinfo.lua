@@ -3,11 +3,13 @@ name = "Drakeor the Dragon"
 description = [[
     Adds the Drakeor character to Don't Starve Together
 
+    - Character isn't balanced by default (Slightly OP)
     - Starts with the Drake Axe, an axe and pickaxe
     - Slowly regains sanity around fires
     - Completely fireproof
     - Takes 75% less overheat damage
-    
+    - Fur can be shaved off with a razor once overgrown
+
     View more at https://drakeor.com/
 ]]
 author = "Caprica and Drakeor"
