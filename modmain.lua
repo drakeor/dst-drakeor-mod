@@ -46,6 +46,7 @@ end)
 
 TUNING = GLOBAL.TUNING
 
+-- DrakeAxe tuning
 TUNING.DRAKEAXE =
 {
     TOOL_DURABILITY= 250,
@@ -57,6 +58,45 @@ TUNING.DRAKEAXE =
     ATTACKWEAR = 1,
     SHADOW_WEAR = 1,
 }
+
+-- Drakeor Character Tuning
+local stat_alloc = GetModConfigData("drakeor_stat_alloc")
+TUNING.DRAKEOR_HEALTH = 150
+TUNING.DRAKEOR_HUNGER = 150
+TUNING.DRAKEOR_SANITY = 150
+
+if stat_alloc == 1 then
+    TUNING.DRAKEOR_HEALTH = 150
+    TUNING.DRAKEOR_HUNGER = 150
+    TUNING.DRAKEOR_SANITY = 150
+elseif stat_alloc == 2 then
+    TUNING.DRAKEOR_HEALTH = 170
+    TUNING.DRAKEOR_HUNGER = 170
+    TUNING.DRAKEOR_SANITY = 110
+elseif stat_alloc == 3 then
+    TUNING.DRAKEOR_HEALTH = 170
+    TUNING.DRAKEOR_HUNGER = 110
+    TUNING.DRAKEOR_SANITY = 170
+elseif stat_alloc == 4 then
+    TUNING.DRAKEOR_HEALTH = 110
+    TUNING.DRAKEOR_HUNGER = 170
+    TUNING.DRAKEOR_SANITY = 170
+elseif stat_alloc == 5 then
+    TUNING.DRAKEOR_HEALTH = 210
+    TUNING.DRAKEOR_HUNGER = 120
+    TUNING.DRAKEOR_SANITY = 120
+elseif stat_alloc == 6 then
+    TUNING.DRAKEOR_HEALTH = 120
+    TUNING.DRAKEOR_HUNGER = 210
+    TUNING.DRAKEOR_SANITY = 120
+elseif stat_alloc == 7 then
+    TUNING.DRAKEOR_HEALTH = 120
+    TUNING.DRAKEOR_HUNGER = 120
+    TUNING.DRAKEOR_SANITY = 210
+end
+
+TUNING.DRAKEOR_FIRE_DAMAGE = 0
+TUNING.DRAKEOR_OVERHEAT_KILL_TIME = 240
 
 
 -- Weapon Lines
@@ -116,3 +156,6 @@ myprefabRecipe.atlas = "images/inventoryimages/drakeaxe.xml"
 
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
 AddModCharacter("drakeor", "MALE", skin_modes)
+
+
+-- Tuning below

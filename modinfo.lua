@@ -41,3 +41,21 @@ server_filter_tags = {
 }
 
 --configuration_options = {}
+configuration_options =
+{
+    {
+        name = "drakeor_stat_alloc",
+        label = "Stat Allocation (Health / Hunger / Sanity)",
+        options =
+        {
+			{description = "Balanced",              data = 1, hover = "150 health / 150 hunger / 150 sanity"}, 
+			{description = "Health + Hunger Focus", data = 2, hover = "170 health / 170 hunger / 110 sanity"}, 
+            {description = "Health + Sanity Focus", data = 3, hover = "170 health / 110 hunger / 170 sanity"}, 
+            {description = "Hunger + Sanity Focus", data = 4, hover = "110 health / 170 hunger / 170 sanity"}, 
+            {description = "Major Health Focus",    data = 5, hover = "210 health / 120 hunger / 120 sanity"}, 
+            {description = "Major Hunger Focus",    data = 6, hover = "120 health / 210 hunger / 120 sanity"}, 
+            {description = "Major Sanity Focus",    data = 7, hover = "120 health / 120 hunger / 210 sanity"}, 
+        },
+        default = 1,
+    }
+}

@@ -5,13 +5,6 @@ local assets = {
 	Asset("ANIM", "anim/drakeor_beard.zip"),
 }
 
--- Your character's stats
-TUNING.DRAKEOR_HEALTH = 150
-TUNING.DRAKEOR_HUNGER = 150
-TUNING.DRAKEOR_SANITY = 200
-TUNING.DRAKEOR_FIRE_DAMAGE = 0
-TUNING.DRAKEOR_OVERHEAT_KILL_TIME = 240
-
 -- Custom starting inventory
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.DRAKEOR = {
 	"flint",
@@ -127,7 +120,7 @@ local master_postinit = function(inst)
     --inst.talker_path_override = "dontstarve_DLC001/characters/"
 	
 	-- Set sanity
-	inst.components.sanity:SetMax(TUNING.WILLOW_SANITY)
+	inst.components.sanity:SetMax(TUNING.DRAKEOR_SANITY)
 	inst.components.sanity.custom_rate_fn = sanityfn
 
 	-- Stats	
