@@ -153,6 +153,9 @@ local TECH = GLOBAL.TECH
 local myprefabRecipe = Recipe("drakeaxe", { Ingredient("dragonfur", 1, "images/inventoryimages/dragonfur.xml"), Ingredient("twigs", 2) }, RECIPETABS.TOOLS, TECH.NONE )
 myprefabRecipe.atlas = "images/inventoryimages/drakeaxe.xml"
 
+local myprefabRecipe2 = Recipe("blowdart_sleep", { Ingredient("dragonfur", 1, "images/inventoryimages/dragonfur.xml"), Ingredient("twigs", 1),  Ingredient("rope", 1)}, RECIPETABS.TOOLS, TECH.NONE )
+
+local myprefabRecipe3 = Recipe("blowdart_fire", { Ingredient("dragonfur", 1, "images/inventoryimages/dragonfur.xml"), Ingredient("twigs", 1),  Ingredient("rope", 1)}, RECIPETABS.TOOLS, TECH.NONE )
 
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
 AddModCharacter("drakeor", "MALE", skin_modes)
