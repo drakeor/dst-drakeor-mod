@@ -85,7 +85,7 @@ end
 
 --tune the beard economy...
 local BEARD_DAYS = 3
-local BEARD_BITS = 2
+local BEARD_BITS = 20
 
 local function OnGrowFur(inst, skinname)
 	inst.AnimState:OverrideSymbol("beard", "drakeor_beard", "beard_medium")
